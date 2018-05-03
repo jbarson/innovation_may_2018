@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'Sliders',
-  
+
   data () {
     return {
       questions: [
@@ -36,10 +36,16 @@ export default {
           id:2,
           text: "My IT department fails to take a systemic approach to building a portfolio of applications that will support our customers’ experiences.",
           value:5,
-          cobitCode: 'haha',
+          cobitCode: 'customerX',
+        },
+        {
+          id:3,
+          text: "We effectively gather business metrics across marketing, sales, and service, including customer acquisition, retention, and satisfaction metrics.",
+          value:5,
+          cobitCode: 'customerX',
         }
       ]
-      }
+    }
 
   }
 }
@@ -47,5 +53,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
- 
+
 </style>
