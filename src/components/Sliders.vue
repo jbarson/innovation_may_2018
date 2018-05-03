@@ -10,8 +10,14 @@
       </div>
       <button @click='calculate(questions, strongestItem)'>submit</button>
 
+      <div class="blurb" v-if=strongestItem.value>
+        <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
+        <div>{{strongestItem.blurb}}</div>
+        <a v-bind:href="strongestItem.link">Click Here for More Info</a>
+      </div>
+
       <div>
-        {{strongestItem}}
+
       </div>
   </div>
 
@@ -50,9 +56,11 @@ export default {
         }
       ],
       strongestItem: {
-        code: '',
-        blurb: '',
-        value: 0
+        code: 'wama',
+        name: 'Data and Other Stuff and Things',
+        blurb: "this isnt about anything.  Here is a bunch of info about what you rock at, and an offer to give you more info if you just click the link below",
+        value: 20,
+        link: 'http://www.moreinfo.com'
       }
     }
 
@@ -88,5 +96,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.blurb {
+  background-color: #eee;
+  text-align: center
+}
 
 </style>
