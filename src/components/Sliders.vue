@@ -3,21 +3,17 @@
   <div id="container">
 
       <div v-for="question in questions" v-bind:key='question.id'>
-        <p>{{question.text}}</p>
+        <p>({{question.cobitCode}}) {{question.text}}</p>
         <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
-        <div class="score" id="ratingOne">{{question.value}}</div>
-        <p>{{question.cobitCode}}</p>
+        <span class="score" id="ratingOne">{{question.value}}</span>
       </div>
-      <button @click='calculate(questions, strongestItem)'>submit</button>
 
-      <div class="blurb" v-if=strongestItem.value>
+      <button @click='calculate(questions, cobitItems)'>submit</button>
+
+      <div class="blurb" v-if='strongestItem'>
         <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
         <div>{{strongestItem.blurb}}</div>
         <a v-bind:href="strongestItem.link">Click Here for More Info</a>
-      </div>
-
-      <div>
-
       </div>
   </div>
 
@@ -89,22 +85,21 @@ export default {
           text: 'The true indicator of enterprise architecture maturity, is value realized by the organization.',
           value: 5,
           cobitCode: 'apo03'
+        },
+        {
+          id: 10,
+          text: 'My company’s IT system owners resist change management because they see it as slow and bureaucratic.',
+          value: 5,
+          cobitCode: 'bai06'
+        },
+        {
+          id: 11,
+          text: 'My organization often sees infrastructure changes as “different” from application changes.',
+          value: 5,
+          cobitCode: 'bai06'
         }
       ],
-      strongestItem: {
-        code: 'wama',
-        name: 'Data and Other Stuff and Things',
-        blurb: "this isnt about anything.  Here is a bunch of info about what you rock at, and an offer to give you more info if you just click the link below",
-        value: 20,
-        link: 'http://www.moreinfo.com'
-      }
-    }
-
-  },
-
-  methods: {
-    calculate (questions, strongestItem) {
-      var cobitItems = [
+      cobitItems: [
         {
           code: 'itrg06',
           name: 'Business Intelligence and Reporting',
@@ -151,24 +146,39 @@ export default {
           value: 5
         },
         {
-          code: 'dss06',
+          code: 'dss05',
           name: 'Security Management',
           blurb: "On Monday, March 18, 2013 Spamhaus contacted CloudFlare regarding an attack they were seeing against their website spamhaus.org. They signed up for CloudFlare and we quickly mitigated the attack. The attack, initially, was approximately 10Gbps generated largely from open DNS recursors. On March 19, the attack increased in size, peaking at approximately 90Gbps. The attack fluctuated between 90Gbps and 30Gbps until 01:15 UTC on on March 21.",
           company_name: 'CloudFlare',
           date: '2013',
           link: 'https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan',
           value: 5
-        },
+        }
+      ],
+      calced: false
+    }
 
-      ];
-      var sorted = cobitItems.map(function(item){
+  },
+
+  methods: {
+    calculate (questions, cobitItems) {
+      this.calced = true
+      var sorted = this.cobitItems.map(function(item){
+        console.log(item.code)
         var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
-        var values = filteredQuestions.map(function(q){return Number(q.value)});
+        console.log("filtered: ", filteredQuestions)
+        var values = filteredQuestions.map(function(q){return Number(q.value)}) || [0];
+        console.log('values: ', values)
         item.value = values.reduce(function(acc, val) { return acc + val; });
+        console.log('value: ', item.value)
       });
-      cobitItems.sort((a, b) => b.value-a.value);
-      strongestItem = cobitItems[0];
-      console.log(strongestItem);
+      this.cobitItems.sort((a, b) => b.value-a.value);
+      console.log(cobitItems)
+    }
+  },
+  computed: {
+    strongestItem: function(){
+      return this.calced?this.cobitItems[0]:null
     }
   }
 }
@@ -179,7 +189,9 @@ export default {
 
 .blurb {
   background-color: #eee;
-  text-align: center
+  text-align: center;
+  margin: 50px 0 50px 0;
+  padding: 25px;
 }
 
 </style>
