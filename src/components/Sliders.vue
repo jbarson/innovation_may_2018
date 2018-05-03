@@ -8,7 +8,7 @@
         <div class="score" id="ratingOne">{{question.value}}</div>
         <p>{{question.cobitCode}}</p>
       </div>
-
+      <button @click='calculate'>submit</button>
   </div>
 
 </template>
@@ -47,6 +47,12 @@ export default {
       ]
     }
 
+  },
+
+  methods: {
+    calculate () {
+      console.log('hi there')
+    }
   }
 }
 </script>
