@@ -8,7 +8,11 @@
         <div class="score" id="ratingOne">{{question.value}}</div>
         <p>{{question.cobitCode}}</p>
       </div>
-      <button @click='calculate'>submit</button>
+      <button @click='calculate(questions, strongestItem)'>submit</button>
+
+      <div>
+        {{strongestItem}}
+      </div>
   </div>
 
 </template>
@@ -44,14 +48,39 @@ export default {
           value:5,
           cobitCode: 'customerX',
         }
-      ]
+      ],
+      strongestItem: {
+        code: '',
+        blurb: '',
+        value: 0
+      }
     }
 
   },
 
   methods: {
-    calculate () {
-      console.log('hi there')
+    calculate (questions, strongestItem) {
+
+      var cobitItems = [
+        {
+          code: 'itrg06',
+          blurb: 'data and bi stuff is awesome',
+          value: 5
+        },
+        {
+          code: 'customerX',
+          blurb: 'your cust ex skills are on point, yo',
+          value: 5
+        }
+      ];
+      var sorted = cobitItems.map(function(item){
+        var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
+        var values = filteredQuestions.map(function(q){return Number(q.value)});
+        item.value = values.reduce(function(acc, val) { return acc + val; });
+      });
+      cobitItems.sort((a, b) => b.value-a.value);
+      strongestItem = cobitItems[0];
+      console.log(strongestItem);
     }
   }
 }
