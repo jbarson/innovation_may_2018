@@ -10,7 +10,7 @@
       </div>
       <button @click='calculate(questions, strongestItem)'>submit</button>
 
-      <div class="blurb" v-if=strongestItem.value>
+      <div class="blurb" v-if='strongestItem'>
         <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
         <div>{{strongestItem.blurb}}</div>
         <a v-bind:href="strongestItem.link">Click Here for More Info</a>
@@ -74,7 +74,7 @@ export default {
 
   methods: {
     calculate (questions, strongestItem) {
-      this.calced = true;
+      this.calced = true
       var sorted = this.cobitItems.map(function(item){
         var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
         var values = filteredQuestions.map(function(q){return Number(q.value)});
