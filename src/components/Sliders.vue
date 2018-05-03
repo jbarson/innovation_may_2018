@@ -12,8 +12,12 @@
 
       <div class="blurb" v-if='strongestItem'>
         <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
-        <div>{{strongestItem.blurb}}</div>
-        <a v-bind:href="strongestItem.link">Click Here for More Info</a>
+        <div>
+          <h2>{{strongestItem.company_name}} -- {{strongestItem.date}} </h2>
+          <div>{{strongestItem.blurb}}</div>
+        </div>
+        <div class="blueprint"><a v-bind:href="strongestItem.link">Click Here for More Info</a></div>
+
       </div>
   </div>
 
@@ -97,6 +101,18 @@ export default {
           text: 'My organization often sees infrastructure changes as “different” from application changes.',
           value: 5,
           cobitCode: 'bai06'
+        },
+        {
+          id: 12,
+          text: 'Our IT Department has a high turnover rate.',
+          value: 5,
+          cobitCode: 'itrg02'
+        },
+        {
+          id: 13,
+          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.s',
+          value: 5,
+          cobitCode: 'itrg02'
         }
       ],
       cobitItems: [
@@ -128,8 +144,17 @@ export default {
           value: 5
         },
         {
+          code: 'itrg02',
+          name: 'Corporate Culture',
+          blurb: "The company is built on the idea that mindfulness, clear communication, and compassion are all critical to long-term success. Asana has become known for its radically inclusive, positive work environment.  This approach has paid off. Asana received a rare perfect rating on Glassdoor and a spot on Glassdoor’s Top 10 Best Places to Work in 2017. The company was also named one of Entrepreneur magazine’s best workplace cultures of 2017.",
+          company_name: 'Asana',
+          date: '2017',
+          link: 'https://www.infotech.com/research/ss/improve-employee-engagement-to-drive-it-performance',
+          value: 5
+        },
+        {
           code: 'customerX',
-          name: 'Customer Experience I think this is wrong',
+          name: 'Customer Experience',
           blurb: "In 1975 a man pulled up to a store with four snow tires in the bed of his truck. He had bought the tires at this location several weeks ago and needed to return them. Unbeknownst to him, the tire shop had closed, and Nordstrom had moved in. Long story short, after explaining his situation to a sales clerk, Nordstrom allowed him to return the tires and refunded his money.",
           company_name: 'Nordstrom',
           date: '1975',
@@ -163,17 +188,12 @@ export default {
   methods: {
     calculate (questions, cobitItems) {
       this.calced = true
-      var sorted = this.cobitItems.map(function(item){
-        console.log(item.code)
+      this.cobitItems.map(function(item){
         var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
-        console.log("filtered: ", filteredQuestions)
         var values = filteredQuestions.map(function(q){return Number(q.value)}) || [0];
-        console.log('values: ', values)
         item.value = values.reduce(function(acc, val) { return acc + val; });
-        console.log('value: ', item.value)
       });
       this.cobitItems.sort((a, b) => b.value-a.value);
-      console.log(cobitItems)
     }
   },
   computed: {
@@ -192,6 +212,9 @@ export default {
   text-align: center;
   margin: 50px 0 50px 0;
   padding: 25px;
+}
+.blueprint {
+  padding: 30px;
 }
 
 </style>
