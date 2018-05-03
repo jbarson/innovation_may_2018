@@ -1,28 +1,14 @@
 <template>
 
   <div id="container">
-    <form>
-      <h1>Please rate our service</h1>
-      <hr>
-      <div id="first">
-        <label for="slider1">Efficiency</label>
-        <input type="range" id="sliderOne" name="slider1" min=0 max=10 value=5>
-        <div class="score" id="ratingOne">0</div>
+
+      <div v-for="question in questions" v-bind:key='question.id'>
+        <p>{{question.text}}</p>
+        <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
+        <div class="score" id="ratingOne">{{question.value}}</div>
+        <p>{{question.cobitCode}}</p>
       </div>
 
-      <div id="second">
-        <label for="slider2">Speed</label>
-        <input type="range" id="sliderTwo" name="slider2" min=0 max=10 value=5>
-        <div class="score" id="ratingTwo">0</div>
-      </div>
-
-      <div id="third">
-        <label for="slider3">Reliability</label>
-        <input type="range" id="sliderThree" name="slider3" min=0 max=10 value=5>
-        <div class="score" id="ratingThree">0</div>
-      </div>
-      <input type="submit" value="Submit" action="">
-    </form>
   </div>
 
 </template>
@@ -30,8 +16,31 @@
 <script>
 export default {
   name: 'Sliders',
-  props: {
-    msg: String
+  
+  data () {
+    return {
+      questions: [
+        {
+          id: 0,
+          text: "I am currently using a business intelligence platform which almost perfectly fits the needs of my organization.",
+          value: 5,
+          cobitCode: 'itrg06',
+        },
+        {
+          id: 1,
+          text: `Providing a flexible environment for delivering data to business users is critical to a company’s business strategy.`,
+          value: 5,
+          cobitCode: 'itrg06',
+        },
+        {
+          id:2,
+          text: "My IT department fails to take a systemic approach to building a portfolio of applications that will support our customers’ experiences.",
+          value:5,
+          cobitCode: 'haha',
+        }
+      ]
+      }
+
   }
 }
 </script>
