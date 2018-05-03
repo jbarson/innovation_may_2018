@@ -53,6 +53,42 @@ export default {
           text: "We effectively gather business metrics across marketing, sales, and service, including customer acquisition, retention, and satisfaction metrics.",
           value:5,
           cobitCode: 'customerX',
+        },
+        {
+          id:4,
+          text: "You have the necessary tools to protect your assets in your company",
+          value:5,
+          cobitCode: 'dss05',
+        },
+        {
+          id:5,
+          text: "Your security team knows exactly which compliance requirements apply to your organization and if they're being met.",
+          value:5,
+          cobitCode: 'dss05',
+        },
+        {
+          id: 6,
+          text: 'My company is  unafraid of completely cutting services if if we believe they should not have been delivered in the first place.',
+          value: 5,
+          cobitCode: 'edm04'
+        },
+        {
+          id: 7,
+          text: 'Cost-cutting initiatives at my organization provide cost savings on or before the agreed upon timeline.',
+          value: 5,
+          cobitCode: 'edm04'
+        },
+        {
+          id: 8,
+          text: 'We have an Enterprise architecture department, and it has clear goals for which areas to improve and how to yield the greatest benefit to our organization.',
+          value: 5,
+          cobitCode: 'apo03'
+        },
+        {
+          id: 9,
+          text: 'The true indicator of enterprise architecture maturity, is value realized by the organization.',
+          value: 5,
+          cobitCode: 'apo03'
         }
       ],
       strongestItem: {
@@ -68,18 +104,62 @@ export default {
 
   methods: {
     calculate (questions, strongestItem) {
-
       var cobitItems = [
         {
           code: 'itrg06',
-          blurb: 'data and bi stuff is awesome',
+          name: 'Business Intelligence and Reporting',
+          blurb: 'But Miller first needed a better product. The company inadvertently found one in 1972, when it acquired something called Meister Brau Lite. The regional lower-calorie beer was popular in one place: Anderson, Ind. Steve Norcia, who headed the Miller account for McCann-Erickson, spent a week there trying to figure out why.',
+          company_name: 'Miller',
+          date: '1974',
+          link: 'https://www.infotech.com/research/ss/build-a-next-generation-bi-with-a-game-changing-bi-strategy',
+          value: 5
+        },
+        {
+          code: 'edm04',
+          name: 'Cost Optimization',
+          blurb: "So much for the idea that Walmart (NYSE: WMT) is a boring stock. Shares gained over 40% in 2017 as the retailer added $80 billion to its market capitalization and trounced the broader market. That rally looks even more impressive when judged against industry peers. Target shed 9% in 2017; Kroger shareholders endured a 20% slump; and Walmart roughly doubled Costco's return for the year.",
+          company_name: 'Walmart',
+          date: '2017',
+          linke: 'https://www.infotech.com/research/ss/minimize-the-damage-of-it-cost-cuts',
+          value: 5
+        },
+        {
+          code: 'bai06',
+          name: 'Change Management',
+          blurb: "Netflix's initial business model included DVD sales and rental, although Hastings jettisoned DVD sales about a year after Netflix's founding to focus on the DVD rental by mail business.[9][10] In 2007, Netflix expanded its business with the introduction of streaming media, while retaining the DVD and Blu-ray rental service.",
+          company_name: 'Netflix',
+          date: '2007',
+          linke: 'https://www.infotech.com/research/ss/optimize-change-management',
           value: 5
         },
         {
           code: 'customerX',
-          blurb: 'your cust ex skills are on point, yo',
+          name: 'Customer Experience I think this is wrong',
+          blurb: "In 1975 a man pulled up to a store with four snow tires in the bed of his truck. He had bought the tires at this location several weeks ago and needed to return them. Unbeknownst to him, the tire shop had closed, and Nordstrom had moved in. Long story short, after explaining his situation to a sales clerk, Nordstrom allowed him to return the tires and refunded his money.",
+          company_name: 'Nordstrom',
+          date: '1975',
+          link: 'https://www.infotech.com/research/ss/build-a-strong-technology-foundation-for-customer-experience-management',
           value: 5
-        }
+        },
+        {
+          code: 'apo03',
+          name: 'Enterprise Architecture',
+          blurb: "It’s been exactly five years to the day since Facebook announced one of the best business acquisitions in the history of Silicon Valley: The $1 billion purchase of a photo-sharing app called Instagram. At the time of the acquisition, Instagram had just 30 million users and zero revenue.  Now, Instagram has more than 600 million users, and many analysts believe it will soon be a multi-billion dollar ad business — if it’s not already.",
+          company_name: 'Facebook',
+          date: '2012',
+          link: 'https://www.infotech.com/research/ss/assess-your-enterprise-architecture-maturity',
+          value: 5
+        },
+        {
+          code: 'dss06',
+          name: 'Security Management',
+          blurb: "On Monday, March 18, 2013 Spamhaus contacted CloudFlare regarding an attack they were seeing against their website spamhaus.org. They signed up for CloudFlare and we quickly mitigated the attack. The attack, initially, was approximately 10Gbps generated largely from open DNS recursors. On March 19, the attack increased in size, peaking at approximately 90Gbps. The attack fluctuated between 90Gbps and 30Gbps until 01:15 UTC on on March 21.",
+          company_name: 'CloudFlare',
+          date: '2013',
+          link: 'https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan',
+          value: 5
+        },
+
       ];
       var sorted = cobitItems.map(function(item){
         var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
