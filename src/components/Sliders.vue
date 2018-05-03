@@ -49,19 +49,7 @@ export default {
           cobitCode: 'customerX',
         }
       ],
-      strongestItem: {
-        code: '',
-        blurb: '',
-        value: 0
-      }
-    }
-
-  },
-
-  methods: {
-    calculate (questions, strongestItem) {
-
-      var cobitItems = [
+      cobitItems: [
         {
           code: 'itrg06',
           blurb: 'data and bi stuff is awesome',
@@ -72,15 +60,26 @@ export default {
           blurb: 'your cust ex skills are on point, yo',
           value: 5
         }
-      ];
-      var sorted = cobitItems.map(function(item){
+      ],
+      calced: false 
+    }
+
+  },
+
+  methods: {
+    calculate (questions, strongestItem) {
+      this.calced = true;
+      var sorted = this.cobitItems.map(function(item){
         var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
         var values = filteredQuestions.map(function(q){return Number(q.value)});
         item.value = values.reduce(function(acc, val) { return acc + val; });
       });
-      cobitItems.sort((a, b) => b.value-a.value);
-      strongestItem = cobitItems[0];
-      console.log(strongestItem);
+      this.cobitItems.sort((a, b) => b.value-a.value);
+    }
+  },
+  computed: {
+    strongestItem: function(){
+      return this.calced?this.cobitItems[0]:null
     }
   }
 }
