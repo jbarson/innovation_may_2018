@@ -2,14 +2,15 @@
   <div>
   <div id="container" v-bind:class="backgroundClass">
     <quiz-title  v-if='titleScreen'/>
-    <button @click='startQuiz' v-if='titleScreen'>Get Started</button>
+    <div @click='startQuiz' v-if='titleScreen'>
+      <start-button />
+    </div>
     <div v-if='!titleScreen'>
-
       <!-- The Quiz -->
       <div v-if="!calced" class="bg">
         <div>
           <h1>How closely do you agree with the following? </h1>
-          <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="quiz-copy-container">
+          <div v-for="question in sectionedQuestions" :key='question.id' class="quiz-copy-container">
             <p class="quiz-copy">{{question.text}}</p>
             <div>
               <input type="range" class="coloredSlider" name="slider1" min=0 max=10 v-model='question.value' />
@@ -55,6 +56,7 @@
 
       </div>
     </div>
+        <button @click='resetPage'>Reset</button>
   </div>
 </template>
 
@@ -86,9 +88,10 @@ import tylenolLogo from "../assets/companyLogos/tylenol.svg";
 // eslint-disable-next-line
 import walmartLogo from "../assets/companyLogos/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
+import StartButton from './StartButton.vue'
 export default {
   name: "Quiz",
-  components: { QuizTitle },
+  components: { QuizTitle, StartButton },
   data() {
     return {
       questions: [
