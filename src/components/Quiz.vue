@@ -80,6 +80,8 @@ import millerLogo from "../assets/companyLogos/miller.svg";
 // eslint-disable-next-line
 import netflixLogo from "../assets/companyLogos/netflix.svg";
 // eslint-disable-next-line
+import nokiaLogo from "../assets/companyLogos/nordstrom.svg";
+// eslint-disable-next-line
 import nordstromLogo from "../assets/companyLogos/nordstrom.svg";
 // eslint-disable-next-line
 import salesforceLogo from "../assets/companyLogos/salesforce.svg";
@@ -261,6 +263,18 @@ export default {
           text: 'Institutional knowledge is consistently recorded and managed by your IT Department.',
           value: 5,
           cobitCode: 'bai08'
+        },
+        {
+          id: 26,
+          text: 'Your orgnanisation fights fires as they appear, while always engaging in systematic prevention.',
+          value: 5,
+          cobitCode: 'dss03'
+        },
+        {
+          id: 27,
+          text: 'Your company sees the IT department as an invaluable partner when problem solving.',
+          value: 5,
+          cobitCode: 'dss03'
         }
       ],
       cobitItems: [
@@ -431,6 +445,18 @@ export default {
           value: 5,
           logo: amexLogo,
           color: 'amex-color'
+        },
+        {
+          code: 'dss03',
+          name: 'Incident and Problem',
+          name2: 'Management',
+          blurb: "In the late 1990s, Swedish-owned Ericsson was one of the big international players in the mobile phone industry, together with the Finnish company Nokia. My first mobile phone in 1996 was in fact a Nokia, but I switched to Ericsson in 1999, because they made much better phones, so I thought. While the phones may have been better, [problem] management for sure wasn’t.",
+          company_name: 'Nokia',
+          date: '2000',
+          link: 'https://www.infotech.com/research/ss/incident-and-problem-management',
+          value: 5,
+          logo: nokiaLogo,
+          color: 'nokia-color'
         }
       ],
       calced: false,
@@ -634,6 +660,10 @@ body {
     color: #D81F26;
     line-height: 92px;
   }
+  .nokia-color {
+    color: #D81F26;
+    line-height: 92px;
+  }
   .nordstrom-color {
     color: #cc5588;
     line-height: 92px;
@@ -689,6 +719,9 @@ body {
 }
 .netflix {
   background: url('../assets/companyBgs/netflix.jpg');
+}
+.nokia {
+  background: url('../assets/companyBgs/nokia.jpg');
 }
 .nordstrom {
   background: url('../assets/companyBgs/netflix.jpg');
