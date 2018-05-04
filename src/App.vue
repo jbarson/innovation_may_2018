@@ -1,22 +1,18 @@
 <template>
-  <div id="app">
+  <!-- <div id="app">
     <Sliders />
-  </div>
+  </div> -->
+  <router-view></router-view>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Sliders from './components/Sliders.vue'
+import router from './router'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld,
-    Sliders
-  },
-  methods: {
-
-  }
+  router: router,
 }
 </script>
 
