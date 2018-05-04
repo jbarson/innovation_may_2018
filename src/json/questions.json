@@ -1,0 +1,122 @@
+[
+  {
+          id: 0,
+          text: "I am currently using a business intelligence platform which almost perfectly fits the needs of my organization.",
+          value: 5,
+          cobitCode: "itrg06"
+  },
+  {
+          id: 1,
+          text: `Providing a flexible environment for delivering data to business users is critical to a company’s business strategy.`,
+          value: 5,
+          cobitCode: "itrg06"
+  },
+  {
+          id: 2,
+          text: "My IT department fails to take a systemic approach to building a portfolio of applications that will support our customers’ experiences.",
+          value: 5,
+          cobitCode: "customerX"
+  },
+  {
+          id: 3,
+          text: "We effectively gather business metrics across marketing, sales, and service, including customer acquisition, retention, and satisfaction metrics.",
+          value: 5,
+          cobitCode: "customerX"
+  },
+  {
+          id: 4,
+          text: "You have the necessary tools to protect your assets in your company",
+          value: 5,
+          cobitCode: "dss05"
+  },
+  {
+          id: 5,
+          text: "Your security team knows exactly which compliance requirements apply to your organization and if they're being met.",
+          value: 5,
+          cobitCode: "dss05"
+  },
+  {
+          id: 6,
+          text: "My company is  unafraid of completely cutting services if if we believe they should not have been delivered in the first place.",
+          value: 5,
+          cobitCode: "edm04"
+  },
+  {
+          id: 7,
+          text: "Cost-cutting initiatives at my organization provide cost savings on or before the agreed upon timeline.",
+          value: 5,
+          cobitCode: "edm04"
+  },
+  {
+          id: 8,
+          text: "We have an Enterprise architecture department, and it has clear goals for which areas to improve and how to yield the greatest benefit to our organization.",
+          value: 5,
+          cobitCode: "apo03"
+  },
+  {
+          id: 9,
+          text: "The true indicator of enterprise architecture maturity, is value realized by the organization.",
+          value: 5,
+          cobitCode: "apo03"
+  },
+  {
+          id: 10,
+          text: "My company’s IT system owners resist change management because they see it as slow and bureaucratic.",
+          value: 5,
+          cobitCode: "bai06"
+  },
+  {
+          id: 11,
+          text: "My organization often sees infrastructure changes as “different” from application changes.",
+          value: 5,
+          cobitCode: "bai06"
+  },
+  {
+          id: 12,
+          text: "Our IT Department has a high turnover rate.",
+          value: 5,
+          cobitCode: "itrg02"
+  },
+  {
+          id: 13,
+          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.',
+          value: 5,
+          cobitCode: 'itrg02'
+  },
+  {
+          id: 14,
+          text: 'Your organisation is satisfied with its IT services, and everyone looks to IT to solve business problems and drive the enterprise forward.',
+          value: 5,
+          cobitCode: 'apo04'
+  },
+  {
+          id: 15,
+          text: 'Innovative ideas from your IT department are often communicated/evangelised across the company and then actioned.',
+          value: 5,
+          cobitCode: 'apo04'
+  },
+  {
+          id: 16,
+          text: 'Our organisation has recently undergone a successful organizational redesign. One that incorporated my IT Department.',
+          value: 5,
+          cobitCode: 'itrg01'
+  },
+  {
+          id: 17,
+          text: 'My organisation has managed to stay at the forefront of our industry despite external competitive influences and changing technological trends.',
+          value: 5,
+          cobitCode: 'itrg01'
+  },
+  {
+          id: 18,
+          text: 'My organisation tackles risk head-on.',
+          value: 5,
+          cobitCode: 'edm03'
+  },
+  {
+          id: 19,
+          text: 'We have a structured, robust system to help us identify risks.',
+          value: 5,
+          cobitCode: 'edm03'
+  }
+]
