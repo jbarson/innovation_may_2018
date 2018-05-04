@@ -2,13 +2,14 @@
 
   <div id="container">
       <img src="../assets/apple.svg">
-      <div v-for="question in questions" v-bind:key='question.id'>
+      <div v-for="question in sectionedQuestions" v-bind:key='question.id'>
         <p>({{question.cobitCode}}) {{question.text}}</p>
         <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
         <span class="score" id="ratingOne">{{question.value}}</span>
       </div>
 
-      <button @click='calculate(questions, cobitItems)'>submit</button>
+      <button @click='nextQuizQuestions()'>Next</button>
+      <button @click='calculate()'>submit</button>
 
       <div class="blurb" v-if='strongestItem'>
         <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
@@ -180,13 +181,14 @@ export default {
           value: 5
         }
       ],
-      calced: false
+      calced: false,
+      quizSection: 0
     }
 
   },
 
   methods: {
-    calculate (questions, cobitItems) {
+    calculate () {
       this.calced = true
       this.cobitItems.map(function(item){
         var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
@@ -194,11 +196,21 @@ export default {
         item.value = values.reduce(function(acc, val) { return acc + val; });
       });
       this.cobitItems.sort((a, b) => b.value-a.value);
+    },
+    nextQuizQuestions () {
+      ++this.quizSection
     }
   },
   computed: {
     strongestItem: function(){
       return this.calced?this.cobitItems[0]:null
+    },
+    sectionedQuestions: function(){
+      let section = this.quizSection;
+      if(section<=2) {
+        console.log(section * 5, this.questions.length)
+        return this.questions.slice((section * 5), 5 + (section * 5) )
+      }
     }
   }
 }
