@@ -62,6 +62,8 @@
 // eslint-disable-next-line
 import amazonLogo from "../assets/companyLogos/amazon.svg";
 // eslint-disable-next-line
+import amexLogo from "../assets/companyLogos/amex.svg";
+// eslint-disable-next-line
 import appleLogo from "../assets/companyLogos/apple.svg";
 // eslint-disable-next-line
 import asanaLogo from "../assets/companyLogos/asana.svg";
@@ -244,6 +246,18 @@ export default {
           text: 'The increased use of cloud vendors and co-lo/MSPs means you may be dependent on vendors to meet your recovery timeline objectives.',
           value: 5,
           cobitCode: 'dss04'
+        },
+        {
+          id: 24,
+          text: 'In your organisation, when a worker retires, their knowledge captured by a mature IT system.',
+          value: 5,
+          cobitCode: 'bai08'
+        },
+        {
+          id: 25,
+          text: 'Institutional knowledge is consistently recorded and managed by your IT Department.',
+          value: 5,
+          cobitCode: 'bai08'
         }
       ],
       cobitItems: [
@@ -402,6 +416,18 @@ export default {
           value: 5,
           logo: tylenolLogo,
           color: 'tylenol-color'
+        },
+        {
+          code: 'bai08',
+          name: 'Knowledge',
+          name2: 'Management',
+          blurb: "This New York-based credit card company, which is also one of the world's largest travel agencies, is planning for the future and keeping its talent close at hand. With more and more IT employees nearing retirement age, the company launched the American Express Technologies Retiree Network in 2008",
+          company_name: 'AMEX',
+          date: '2008',
+          link: 'https://www.infotech.com/research/ss/transfer-it-knowledge-before-it-s-gone',
+          value: 5,
+          logo: amexLogo,
+          color: 'amex-color'
         }
       ],
       calced: false,
@@ -448,7 +474,7 @@ export default {
     sectionedQuestions: function() {
       let section = this.quizSection;
       if(section<=2) {
-        return this.questions.slice((section * 8), 8 + (section * 8) )
+        return this.questions.slice((section * 9), 9 + (section * 9) )
       }
     }
   },
@@ -573,6 +599,10 @@ body {
     color: #F6A61F;
     line-height: 92px;
   }
+  .amex-color {
+    color: #F6A61F;
+    line-height: 92px;
+  }
   .apple-color {
     color: #373636;
     line-height: 92px;
@@ -633,6 +663,9 @@ body {
   background: url('../assets/companyBgs/amazon.jpg');
 }
 .apple {
+  background: url('../assets/companyBgs/apple.jpg');
+}
+.amex {
   background: url('../assets/companyBgs/apple.jpg');
 }
 .asana {
