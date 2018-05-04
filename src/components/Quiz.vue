@@ -16,7 +16,7 @@
           <h2>{{strongestItem.company_name}} -- {{strongestItem.date}} </h2>
           <div>{{strongestItem.blurb}}</div>
         </div>
-        <div class="blueprint"><a v-bind:href="strongestItem.link">Click Here for More Info</a></div>
+        <div class="blueprint"><a :href="strongestItem.link">Click Here for More Info</a></div>
 
       </div>
   </div>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Quiz1',
+  name: 'Quiz',
 
   data () {
     return {
@@ -110,45 +110,9 @@ export default {
         },
         {
           id: 13,
-          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.',
+          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.s',
           value: 5,
           cobitCode: 'itrg02'
-        },
-        {
-          id: 14,
-          text: 'Your organisation is satisfied with its IT services, and everyone looks to IT to solve business problems and drive the enterprise forward.',
-          value: 5,
-          cobitCode: 'apo04'
-        },
-        {
-          id: 15,
-          text: 'Innovative ideas from your IT department are often communicated/evangelised across the company and then actioned.',
-          value: 5,
-          cobitCode: 'apo04'
-        },
-        {
-          id: 16,
-          text: 'Our organisation has recently undergone a successful organizational redesign. One that incorporated my IT Department.',
-          value: 5,
-          cobitCode: 'itrg01'
-        },
-        {
-          id: 17,
-          text: 'My organisation has managed to stay at the forefront of our industry despite external competitive influences and changing technological trends.',
-          value: 5,
-          cobitCode: 'itrg01'
-        },
-        {
-          id: 18,
-          text: 'My organisation tackles risk head-on.',
-          value: 5,
-          cobitCode: 'edm03'
-        },
-        {
-          id: 19,
-          text: 'We have a structured, robust system to help us identify risks.',
-          value: 5,
-          cobitCode: 'edm03'
         }
       ],
       cobitItems: [
@@ -204,33 +168,6 @@ export default {
           company_name: 'Facebook',
           date: '2012',
           link: 'https://www.infotech.com/research/ss/assess-your-enterprise-architecture-maturity',
-          value: 5
-        },
-        {
-          code: 'apo04',
-          name: 'Innovation',
-          blurb: "11 years ago today, Steve Jobs introduced the iPhone.  Eleven years ago today Steve Jobs announced a wide-screen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet device. But it wasn't three products. It was one product. And we got it, Steve. We got iPhone.",
-          company_name: 'Apple',
-          date: '2007',
-          link: 'https://www.infotech.com/research/ss/prototype-with-an-innovation-design-sprint',
-          value: 5
-        },
-        {
-          code: 'itrg01',
-          name: 'IT Organizational Design',
-          blurb: "Well, the first big thing Bezos realized is that the infrastructure they'd built for selling and shipping books and sundry could be transformed an excellent repurposable computing platform.",
-          company_name: 'Amazon',
-          date: '2007',
-          link: 'https://www.infotech.com/research/ss/redesign-your-it-organizational-structure',
-          value: 5
-        },
-        {
-          code: 'edm03',
-          name: 'Risk Management',
-          blurb: "The IBM Personal Computer, commonly known as the IBM PC, is the original version and progenitor of the IBM PC compatible hardware platform. It is IBM model number 5150, and was introduced on August 12, 1981. It was created by a team of engineers and designers under the direction of Don Estridge of the IBM Entry Systems Division in Boca Raton, Florida.",
-          company_name: 'Amazon',
-          date: '2007',
-          link: 'https://www.infotech.com/research/ss/build-a-business-driven-it-risk-management-program',
           value: 5
         },
         {
