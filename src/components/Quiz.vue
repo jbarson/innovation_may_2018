@@ -302,7 +302,7 @@ export default {
       let section = this.quizSection;
       if(section<=2) {
         console.log(section * 5, this.questions.length)
-        return this.questions.slice((section * 5), 5 + (section * 5) )
+        return this.questions.slice((section * 7), 7 + (section * 6) )
       }
     }
   },
