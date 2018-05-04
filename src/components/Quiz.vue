@@ -721,7 +721,7 @@ body {
   background: url('../assets/companyBgs/netflix.jpg');
 }
 .nokia {
-  background: url('../assets/companyBgs/nokia.jpg');
+  background: url('../assets/companyBgs/apple.jpg');
 }
 .nordstrom {
   background: url('../assets/companyBgs/netflix.jpg');
