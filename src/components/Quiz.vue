@@ -1,37 +1,46 @@
 <template>
-
-  <div id="container">
-      <div v-for="question in sectionedQuestions" v-bind:key='question.id'>
-        <p>({{question.cobitCode}}) {{question.text}}</p>
-        <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
-        <span class="score" id="ratingOne">{{question.value}}</span>
-      </div>
-
-      <button @click='nextQuizQuestions()'>Next</button>
-      <button @click='calculate()'>submit</button>
-
-      <div class="blurb" v-if='strongestItem'>
-        <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
-        <div>
-          <h2>{{strongestItem.company_name}} -- {{strongestItem.date}} </h2>
-          <div>
-            <img v-bind:src="strongestItem.logo" />
-            <p>{{strongestItem.blurb}}</p>
-            </div>
+  <div class="bg">
+    <div id="container">
+        <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="result-copy-container">
+          <p class="result-copy">{{question.text}}</p>
+          <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
+          <span class="score" id="ratingOne">{{question.value}}</span>
         </div>
-        <div class="blueprint"><a :href="strongestItem.link">Click Here for More Info</a></div>
 
-      </div>
+        <button @click='nextQuizQuestions()'>Next</button>
+        <button @click='calculate()'>submit</button>
+
+        <div class="blurb" v-if='strongestItem'>
+          <div class="title-container">
+            <h1 class="title-header">{{strongestItem.name}}</h1>
+          </div>
+          <div>
+            <div class="top-line-header">
+              <span></span>
+              <h2 class="title-top">{{strongestItem.company_name}} {{strongestItem.date}}  (iPhone launch)</h2>
+            </div>
+
+            <div>
+              <img v-bind:src="strongestItem.logo" />
+              <p>{{strongestItem.blurb}}</p>
+            </div>
+          </div>
+          <div class="blueprint"><a :href="strongestItem.link">Click Here for More Info</a></div>
+        </div>
+    </div>
   </div>
-
 </template>
 
 <script>
+import infotechLogo from '../assets/infotech.svg'
+import submitButton from '../assets/submit.svg'
+// company logos
 import amazonLogo from '../assets/amazon.svg'
 import appleLogo from '../assets/apple.svg'
 import asanaLogo from '../assets/asana.svg'
 import cloudflareLogo from '../assets/cloudflare.svg'
 import facebookLogo from '../assets/facebook.svg'
+import ibmLogo from '../assets/ibm.svg'
 import millerLogo from '../assets/miller.svg'
 import netflixLogo from '../assets/netflix.svg'
 import nordstromLogo from '../assets/nordstrom.svg'
@@ -122,9 +131,45 @@ export default {
         },
         {
           id: 13,
-          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.s',
+          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.',
           value: 5,
           cobitCode: 'itrg02'
+        },
+        {
+          id: 14,
+          text: 'Your organisation is satisfied with its IT services, and everyone looks to IT to solve business problems and drive the enterprise forward.',
+          value: 5,
+          cobitCode: 'apo04'
+        },
+        {
+          id: 15,
+          text: 'Innovative ideas from your IT department are often communicated/evangelised across the company and then actioned.',
+          value: 5,
+          cobitCode: 'apo04'
+        },
+        {
+          id: 16,
+          text: 'Our organisation has recently undergone a successful organizational redesign. One that incorporated my IT Department.',
+          value: 5,
+          cobitCode: 'itrg01'
+        },
+        {
+          id: 17,
+          text: 'My organisation has managed to stay at the forefront of our industry despite external competitive influences and changing technological trends.',
+          value: 5,
+          cobitCode: 'itrg01'
+        },
+        {
+          id: 18,
+          text: 'My organisation tackles risk head-on.',
+          value: 5,
+          cobitCode: 'edm03'
+        },
+        {
+          id: 19,
+          text: 'We have a structured, robust system to help us identify risks.',
+          value: 5,
+          cobitCode: 'edm03'
         }
       ],
       cobitItems: [
@@ -189,6 +234,36 @@ export default {
           logo: facebookLogo
         },
         {
+          code: 'apo04',
+          name: 'Innovation',
+          blurb: "11 years ago today, Steve Jobs introduced the iPhone.  Eleven years ago today Steve Jobs announced a wide-screen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet device. But it wasn't three products. It was one product. And we got it, Steve. We got iPhone.",
+          company_name: 'Apple',
+          date: '2007',
+          link: 'https://www.infotech.com/research/ss/prototype-with-an-innovation-design-sprint',
+          value: 5,
+          logo: appleLogo
+        },
+        {
+          code: 'itrg01',
+          name: 'IT Organizational Design',
+          blurb: "Well, the first big thing Bezos realized is that the infrastructure they'd built for selling and shipping books and sundry could be transformed an excellent repurposable computing platform.",
+          company_name: 'Amazon',
+          date: '2007',
+          link: 'https://www.infotech.com/research/ss/redesign-your-it-organizational-structure',
+          value: 5,
+          logo: amazonLogo
+        },
+        {
+          code: 'edm03',
+          name: 'Risk Management',
+          blurb: "The IBM Personal Computer, commonly known as the IBM PC, is the original version and progenitor of the IBM PC compatible hardware platform. It is IBM model number 5150, and was introduced on August 12, 1981. It was created by a team of engineers and designers under the direction of Don Estridge of the IBM Entry Systems Division in Boca Raton, Florida.",
+          company_name: 'IBM',
+          date: '2007',
+          link: 'https://www.infotech.com/research/ss/build-a-business-driven-it-risk-management-program',
+          value: 5,
+          logo: ibmLogo
+        },
+        {
           code: 'dss05',
           name: 'Security Management',
           blurb: "On Monday, March 18, 2013 Spamhaus contacted CloudFlare regarding an attack they were seeing against their website spamhaus.org. They signed up for CloudFlare and we quickly mitigated the attack. The attack, initially, was approximately 10Gbps generated largely from open DNS recursors. On March 19, the attack increased in size, peaking at approximately 90Gbps. The attack fluctuated between 90Gbps and 30Gbps until 01:15 UTC on on March 21.",
@@ -239,6 +314,41 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.bg {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNjQ0cHgiIGhlaWdodD0iNzY4cHgiIHZpZXdCb3g9IjAgMCA2NDQgNzY4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0OS4zICg1MTE2NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+YmcgY29weSA1PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IHgxPSI2MC44NjU0MDQlIiB5MT0iLTM3LjUyNTg3ODklIiB4Mj0iNjAuODY1NDAyMyUiIHkyPSI5OC41NjEyNTc2JSIgaWQ9ImxpbmVhckdyYWRpZW50LTEiPgogICAgICAgICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjRjlGOUY5IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNBRkFGQUYiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIwLjExOTk5OTk5NyI+CiAgICAgICAgPGcgaWQ9IkFydGJvYXJkLUNvcHktNSIgZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudC0xKSI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJiZy1jb3B5LTUiIHBvaW50cz0iLTE1MC40MTQwNjIgMCA2NDMuMjAzMTI1IDAgNTEgNzY4IC0xNTQuNzI2NTYyIDc2OCI+PC9wb2x5Z29uPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+") no-repeat;
+}
+
+.top-line-header {
+  clear: both;
+
+  span {
+    background: #373636;
+    width: 40px;
+    height: 2px;
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+  }
+
+  .title-top {
+    font-family: Exo-DemiBold;
+    font-size: 18px;
+    color: #373636;
+    display: inline-block;
+  }
+}
+
+.result-copy-container {
+  .result-copy {
+    font-family: Exo-DemiBold;
+    font-size: 20px;
+    color: #888888;
+    line-height: 27px;
+    width: 50%;
+  }
+}
+
 
 .blurb {
   background-color: #eee;
