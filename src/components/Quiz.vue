@@ -2,12 +2,13 @@
   <div class="bg">
   <div id="container">
     <quiz-title  v-if='titleScreen'/>
-    <start-button @click='startQuiz' v-if='titleScreen' />
+    <div @click='startQuiz' v-if='titleScreen'>
+      <start-button />
+    </div>
     <div v-if='!titleScreen'>
-
       <!-- The Quiz -->
       <div v-if="!calced">
-        <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="result-copy-container">
+        <div v-for="question in sectionedQuestions" :key='question.id' class="result-copy-container">
           <p class="result-copy">{{question.text}}</p>
           <input type="range" class="coloredSlider" name="slider1" min=0 max=10 v-model='question.value' >
           <span class="score" id="ratingOne">{{question.value}}</span>
