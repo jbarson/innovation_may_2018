@@ -1,7 +1,6 @@
 <template>
 
   <div id="container">
-      <img src="../assets/apple.svg">
       <div v-for="question in questions" v-bind:key='question.id'>
         <p>({{question.cobitCode}}) {{question.text}}</p>
         <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
@@ -14,7 +13,10 @@
         <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
         <div>
           <h2>{{strongestItem.company_name}} -- {{strongestItem.date}} </h2>
-          <div>{{strongestItem.blurb}}</div>
+          <div>
+            Static: <img src="../assets/asana.svg">, Dynamic: <img v-bind:src="strongestItem.logo" />
+            <p>{{strongestItem.blurb}}</p>
+            </div>
         </div>
         <div class="blueprint"><a :href="strongestItem.link">Click Here for More Info</a></div>
 
@@ -123,7 +125,8 @@ export default {
           company_name: 'Miller',
           date: '1974',
           link: 'https://www.infotech.com/research/ss/build-a-next-generation-bi-with-a-game-changing-bi-strategy',
-          value: 5
+          value: 5,
+          logo: "../assets/miller.svg"
         },
         {
           code: 'edm04',
@@ -132,7 +135,8 @@ export default {
           company_name: 'Walmart',
           date: '2017',
           linke: 'https://www.infotech.com/research/ss/minimize-the-damage-of-it-cost-cuts',
-          value: 5
+          value: 5,
+          logo: "../assets/walmart.svg"
         },
         {
           code: 'bai06',
@@ -141,7 +145,8 @@ export default {
           company_name: 'Netflix',
           date: '2007',
           linke: 'https://www.infotech.com/research/ss/optimize-change-management',
-          value: 5
+          value: 5,
+          logo: "../assets/netflix.svg"
         },
         {
           code: 'itrg02',
@@ -150,7 +155,8 @@ export default {
           company_name: 'Asana',
           date: '2017',
           link: 'https://www.infotech.com/research/ss/improve-employee-engagement-to-drive-it-performance',
-          value: 5
+          value: 5,
+          logo: "../assets/asana.svg"
         },
         {
           code: 'customerX',
@@ -159,7 +165,8 @@ export default {
           company_name: 'Nordstrom',
           date: '1975',
           link: 'https://www.infotech.com/research/ss/build-a-strong-technology-foundation-for-customer-experience-management',
-          value: 5
+          value: 5,
+          logo: "../assets/nordstrom.svg"
         },
         {
           code: 'apo03',
@@ -168,7 +175,8 @@ export default {
           company_name: 'Facebook',
           date: '2012',
           link: 'https://www.infotech.com/research/ss/assess-your-enterprise-architecture-maturity',
-          value: 5
+          value: 5,
+          logo: "../assets/facebook.svg"
         },
         {
           code: 'dss05',
@@ -177,7 +185,8 @@ export default {
           company_name: 'CloudFlare',
           date: '2013',
           link: 'https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan',
-          value: 5
+          value: 5,
+          logo: "../assets/cloudflare.svg"
         }
       ],
       calced: false
