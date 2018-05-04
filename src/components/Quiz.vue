@@ -2,7 +2,7 @@
   <div class="bg">
   <div id="container">
     <quiz-title  v-if='titleScreen'/>
-    <start-button @click='startQuiz' v-if='titleScreen' > </start-button>
+    <start-button @click='startQuiz' v-if='titleScreen' />
     <div v-if='!titleScreen'>
 
       <!-- The Quiz -->
