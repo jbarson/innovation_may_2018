@@ -1,6 +1,7 @@
 <template>
 
   <div id="container">
+    <div v-if="!calced">
       <div v-for="question in sectionedQuestions" v-bind:key='question.id'>
         <p>({{question.cobitCode}}) {{question.text}}</p>
         <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
@@ -9,6 +10,7 @@
 
       <button @click='nextQuizQuestions()'>Next</button>
       <button @click='calculate()'>submit</button>
+    </div>
 
       <div class="blurb" v-if='strongestItem'>
         <h1>{{strongestItem.name}} ({{strongestItem.code}})</h1>
