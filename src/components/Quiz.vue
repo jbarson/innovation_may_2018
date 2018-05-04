@@ -2,37 +2,51 @@
   <div class="bg">
   <div id="container">
     <button @click='resetPage'>Reset</button>
-  <quiz-title  v-if='titleScreen'/>
-  <button @click='startQuiz' v-if='titleScreen'>Get Started</button>
-  <div v-if='!titleScreen'>
-    <div v-if="!calced">
-      <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="result-copy-container">
-        <p class="result-copy">{{question.text}}</p>
-        <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
-        <span class="score" id="ratingOne">{{question.value}}</span>
+    <quiz-title  v-if='titleScreen'/>
+    <img src="../assets/netflix.svg" />
+    <button @click='startQuiz' v-if='titleScreen'>Get Started</button>
+    <div v-if='!titleScreen'>
+
+      <!-- The Quiz -->
+      <div v-if="!calced">
+        <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="result-copy-container">
+          <p class="result-copy">{{question.text}}</p>
+          <input type="range" class="coloredSlider" name="slider1" min=0 max=10 v-model='question.value' >
+          <span class="score" id="ratingOne">{{question.value}}</span>
+        </div>
+        <button @click='nextQuizQuestions()' v-if='quizSection!==2' >Next</button>
+        <button @click='calculate()' v-if='quizSection===2'>submit</button>
       </div>
-      <button @click='nextQuizQuestions()' v-if='quizSection!==2' >Next</button>
-      <button @click='calculate()' v-if='quizSection===2'>submit</button>
-    </div>
 
-        <div class="blurb" v-if='strongestItem'>
-          <div class="title-container">
-            <h1 class="title-header">{{strongestItem.name}}</h1>
-          </div>
-          <div>
-            <div class="top-line-header">
-              <span></span>
-              <h2 class="title-top">{{strongestItem.company_name}} {{strongestItem.date}}  (iPhone launch)</h2>
-            </div>
+      <!-- Quiz Results -->
+      <div class="company-info-container" v-if='strongestItem'>
+        <img v-bind:src="strongestItem.logo" />
 
-            <div>
-              <img v-bind:src="strongestItem.logo" />
-              <p>{{strongestItem.blurb}}</p>
-            </div>
-          </div>
-          <div class="blueprint"><a :href="strongestItem.link">Click Here for More Info</a></div>
+        <p class="info-copy">{{strongestItem.blurb}}</p>
+        <!-- Copy Marker -->
+        <div class="markers">
+          <div class="copy-marker-filled"></div>
+          <div class="copy-marker-empty"></div>
         </div>
+
+        <div class="top-line-header">
+          <span></span>
+          <h2 class="title-top">{{strongestItem.company_name}} {{strongestItem.date}}  (iPhone launch)</h2>
         </div>
+
+        <div class="title-container">
+          <h1 class="title-header">{{strongestItem.name}}</h1>
+        </div>
+
+         <div class="result-copy-container">
+          <p class="result-copy">Your organisation is satisfied with its IT services, and everyone looks to IT to solve business problems and drive the enterprise forward.</p>
+        </div>
+
+        <div class="blueprint">
+          <a :href="strongestItem.link">Click Here for More Info</a></div>
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
@@ -366,13 +380,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .bg {
   background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNjQ0cHgiIGhlaWdodD0iNzY4cHgiIHZpZXdCb3g9IjAgMCA2NDQgNzY4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0OS4zICg1MTE2NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+YmcgY29weSA1PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IHgxPSI2MC44NjU0MDQlIiB5MT0iLTM3LjUyNTg3ODklIiB4Mj0iNjAuODY1NDAyMyUiIHkyPSI5OC41NjEyNTc2JSIgaWQ9ImxpbmVhckdyYWRpZW50LTEiPgogICAgICAgICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjRjlGOUY5IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNBRkFGQUYiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIwLjExOTk5OTk5NyI+CiAgICAgICAgPGcgaWQ9IkFydGJvYXJkLUNvcHktNSIgZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudC0xKSI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJiZy1jb3B5LTUiIHBvaW50cz0iLTE1MC40MTQwNjIgMCA2NDMuMjAzMTI1IDAgNTEgNzY4IC0xNTQuNzI2NTYyIDc2OCI+PC9wb2x5Z29uPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+") no-repeat;
 }
 
+// Quiz Results
 .top-line-header {
   clear: both;
-
   span {
     background: #373636;
     width: 40px;
@@ -390,7 +409,64 @@ export default {
     display: inline-block;
   }
 }
+.copy-marker-filled {
+  width: 9px;
+  height: 9px;
+  background: #7d7d7d;
+  border: 1px solid #979797;
+  display: inline-block;
+}
 
+.copy-marker-empty {
+  width: 9px;
+  height: 9px;
+  background: #d8d8d8;
+  border: 1px solid #979797;
+  display: inline-block;
+}
+
+.markers {
+  float: left;
+  clear: left;
+  position: relative;
+  left: 126px;
+  top: -30px;
+}
+.info-copy {
+  font-family: Exo-Italic;
+  font-size: 12px;
+  width: 18%;
+  height: auto;
+  color: #888888;
+  padding-left: 20px;
+  line-height: 20px;
+  float: left;
+  margin-left: 20px;
+  border-left: 1px solid #979797;
+  padding-bottom: 21px;
+}
+.company-logo {
+  display: inline-block;
+  float: left;
+  margin-left: 20px;
+  position: relative;
+  top: 20px;
+}
+.title-container {
+  margin-top: 10px;
+  .title-header {
+    font-family: Montserrat-Black;
+    font-size: 100px;
+    color: #373636;
+    line-height: 46px;
+    margin: 10px 0 0;
+  }
+
+  .amazon-color {
+    color: #F6A61F;
+    line-height: 92px;
+  }
+}
 .result-copy-container {
   .result-copy {
     font-family: Exo-DemiBold;
@@ -401,14 +477,17 @@ export default {
   }
 }
 
-
-.blurb {
-  background-color: #eee;
-  text-align: center;
-  margin: 50px 0 50px 0;
-  padding: 25px;
+.coloredSlider {
+	float: left;
+	clear: left;
+width: 600px;
+	margin: 15px;
 }
-.blueprint {
-  padding: 30px;
+.coloredSlider .ui-slider-range {
+	background: #ff0000;
+}
+.coloredSlider .ui-state-default, .ui-widget-content .ui-state-default {
+	background: none;
+	background-color: #FFF;
 }
 </style>
