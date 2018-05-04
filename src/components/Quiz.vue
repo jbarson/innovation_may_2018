@@ -1,14 +1,15 @@
 <template>
   <div class="bg">
-    <div id="container">
-        <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="result-copy-container">
-          <p class="result-copy">{{question.text}}</p>
-          <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
-          <span class="score" id="ratingOne">{{question.value}}</span>
-        </div>
-
-        <button @click='nextQuizQuestions()'>Next</button>
-        <button @click='calculate()'>submit</button>
+  <div id="container">
+    <div v-if="!calced">
+      <div v-for="question in sectionedQuestions" v-bind:key='question.id' class="result-copy-container">
+        <p class="result-copy">{{question.text}}</p>
+        <input type="range" id="sliderOne" name="slider1" min=0 max=10 v-model='question.value' >
+        <span class="score" id="ratingOne">{{question.value}}</span>
+      </div>
+      <button @click='nextQuizQuestions()' v-if='quizSection!==2' >Next</button>
+      <button @click='calculate()' v-if='quizSection===2'>submit</button>
+    </div>
 
         <div class="blurb" v-if='strongestItem'>
           <div class="title-container">
