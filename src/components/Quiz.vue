@@ -17,7 +17,7 @@
         <div>
           <h2>{{strongestItem.company_name}} -- {{strongestItem.date}} </h2>
           <div>
-            Static: <img src="../assets/asana.svg">, Dynamic: <img v-bind:src="strongestItem.logo" />
+            <img v-bind:src="strongestItem.logo" />
             <p>{{strongestItem.blurb}}</p>
             </div>
         </div>
@@ -29,6 +29,15 @@
 </template>
 
 <script>
+import amazonLogo from '../assets/amazon.svg'
+import appleLogo from '../assets/apple.svg'
+import asanaLogo from '../assets/asana.svg'
+import cloudflareLogo from '../assets/cloudflare.svg'
+import facebookLogo from '../assets/facebook.svg'
+import millerLogo from '../assets/miller.svg'
+import netflixLogo from '../assets/netflix.svg'
+import nordstromLogo from '../assets/nordstrom.svg'
+import walmartLogo from '../assets/walmart.svg'
 export default {
   name: 'Quiz',
 
@@ -129,7 +138,7 @@ export default {
           date: '1974',
           link: 'https://www.infotech.com/research/ss/build-a-next-generation-bi-with-a-game-changing-bi-strategy',
           value: 5,
-          logo: "../assets/miller.svg"
+          logo: millerLogo
         },
         {
           code: 'edm04',
@@ -139,7 +148,7 @@ export default {
           date: '2017',
           linke: 'https://www.infotech.com/research/ss/minimize-the-damage-of-it-cost-cuts',
           value: 5,
-          logo: "../assets/walmart.svg"
+          logo: walmartLogo
         },
         {
           code: 'bai06',
@@ -149,7 +158,7 @@ export default {
           date: '2007',
           linke: 'https://www.infotech.com/research/ss/optimize-change-management',
           value: 5,
-          logo: "../assets/netflix.svg"
+          logo: netflixLogo
         },
         {
           code: 'itrg02',
@@ -159,7 +168,7 @@ export default {
           date: '2017',
           link: 'https://www.infotech.com/research/ss/improve-employee-engagement-to-drive-it-performance',
           value: 5,
-          logo: "../assets/asana.svg"
+          logo: asanaLogo
         },
         {
           code: 'customerX',
@@ -169,7 +178,7 @@ export default {
           date: '1975',
           link: 'https://www.infotech.com/research/ss/build-a-strong-technology-foundation-for-customer-experience-management',
           value: 5,
-          logo: "../assets/nordstrom.svg"
+          logo: nordstromLogo
         },
         {
           code: 'apo03',
@@ -179,7 +188,7 @@ export default {
           date: '2012',
           link: 'https://www.infotech.com/research/ss/assess-your-enterprise-architecture-maturity',
           value: 5,
-          logo: "../assets/facebook.svg"
+          logo: facebookLogo
         },
         {
           code: 'dss05',
@@ -189,15 +198,13 @@ export default {
           date: '2013',
           link: 'https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan',
           value: 5,
-          logo: "../assets/cloudflare.svg"
+          logo: cloudflareLogo
         }
       ],
       calced: false,
       quizSection: 0
     }
-
   },
-
   methods: {
     calculate () {
       const questions = this.questions
@@ -224,6 +231,10 @@ export default {
         return this.questions.slice((section * 5), 5 + (section * 5) )
       }
     }
+  },
+  build: {
+    assetsPublicPath: '/',
+    assetsSubDirectory: 'assets'
   }
 }
 </script>
