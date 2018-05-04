@@ -3,7 +3,6 @@
   <div id="container">
     <button @click='resetPage'>Reset</button>
     <quiz-title  v-if='titleScreen'/>
-    <img src="../assets/netflix.svg" />
     <button @click='startQuiz' v-if='titleScreen'>Get Started</button>
     <div v-if='!titleScreen'>
 
@@ -36,6 +35,7 @@
 
         <div class="title-container">
           <h1 class="title-header">{{strongestItem.name}}</h1>
+          <h1 class="title-header amazon-color" v-bind:class="strongestItem.color">{{strongestItem.name2}}</h1>
         </div>
 
          <div class="result-copy-container">
@@ -53,25 +53,25 @@
 
 <script>
 // eslint-disable-next-line
-import amazonLogo from "../assets/amazon.svg";
+import amazonLogo from "../assets/companyLogos/amazon.svg";
 // eslint-disable-next-line
-import appleLogo from "../assets/apple.svg";
+import appleLogo from "../assets/companyLogos/apple.svg";
 // eslint-disable-next-line
-import asanaLogo from "../assets/asana.svg";
+import asanaLogo from "../assets/companyLogos/asana.svg";
 // eslint-disable-next-line
-import cloudflareLogo from "../assets/cloudflare.svg";
+import cloudflareLogo from "../assets/companyLogos/cloudflare.svg";
 // eslint-disable-next-line
-import facebookLogo from "../assets/facebook.svg";
+import facebookLogo from "../assets/companyLogos/facebook.svg";
 // eslint-disable-next-line
-import ibmLogo from "../assets/ibm.svg";
+import ibmLogo from "../assets/companyLogos/ibm.svg";
 // eslint-disable-next-line
-import millerLogo from "../assets/miller.svg";
+import millerLogo from "../assets/companyLogos/miller.svg";
 // eslint-disable-next-line
-import netflixLogo from "../assets/netflix.svg";
+import netflixLogo from "../assets/companyLogos/netflix.svg";
 // eslint-disable-next-line
-import nordstromLogo from "../assets/nordstrom.svg";
+import nordstromLogo from "../assets/companyLogos/nordstrom.svg";
 // eslint-disable-next-line
-import walmartLogo from "../assets/walmart.svg";
+import walmartLogo from "../assets/companyLogos/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
 export default {
   name: "Quiz",
@@ -214,7 +214,8 @@ export default {
       cobitItems: [
         {
           code: "itrg06",
-          name: "Business Intelligence and Reporting",
+          name: "Business Intelligence",
+          name2: "and Reporting",
           blurb:
             "But Miller first needed a better product. The company inadvertently found one in 1972, when it acquired something called Meister Brau Lite. The regional lower-calorie beer was popular in one place: Anderson, Ind. Steve Norcia, who headed the Miller account for McCann-Erickson, spent a week there trying to figure out why.",
           company_name: "Miller",
@@ -222,11 +223,13 @@ export default {
           link:
             "https://www.infotech.com/research/ss/build-a-next-generation-bi-with-a-game-changing-bi-strategy",
           value: 5,
-          logo: millerLogo
+          logo: millerLogo,
+          color: 'miller-color'
         },
         {
           code: "edm04",
-          name: "Cost Optimization",
+          name: "Cost",
+          name2: 'Optimization',
           blurb:
             "So much for the idea that Walmart (NYSE: WMT) is a boring stock. Shares gained over 40% in 2017 as the retailer added $80 billion to its market capitalization and trounced the broader market. That rally looks even more impressive when judged against industry peers. Target shed 9% in 2017; Kroger shareholders endured a 20% slump; and Walmart roughly doubled Costco's return for the year.",
           company_name: "Walmart",
@@ -234,11 +237,13 @@ export default {
           linke:
             "https://www.infotech.com/research/ss/minimize-the-damage-of-it-cost-cuts",
           value: 5,
-          logo: walmartLogo
+          logo: walmartLogo,
+          color: 'walmart-color'
         },
         {
           code: "bai06",
-          name: "Change Management",
+          name: "Change",
+          name2: 'Management',
           blurb:
             "Netflix's initial business model included DVD sales and rental, although Hastings jettisoned DVD sales about a year after Netflix's founding to focus on the DVD rental by mail business.[9][10] In 2007, Netflix expanded its business with the introduction of streaming media, while retaining the DVD and Blu-ray rental service.",
           company_name: "Netflix",
@@ -246,11 +251,13 @@ export default {
           linke:
             "https://www.infotech.com/research/ss/optimize-change-management",
           value: 5,
-          logo: netflixLogo
+          logo: netflixLogo,
+          color: 'netflix-color'
         },
         {
           code: "itrg02",
-          name: "Corporate Culture",
+          name: "Corporate",
+          name2: 'Culture',
           blurb:
             "The company is built on the idea that mindfulness, clear communication, and compassion are all critical to long-term success. Asana has become known for its radically inclusive, positive work environment.  This approach has paid off. Asana received a rare perfect rating on Glassdoor and a spot on Glassdoor’s Top 10 Best Places to Work in 2017. The company was also named one of Entrepreneur magazine’s best workplace cultures of 2017.",
           company_name: "Asana",
@@ -258,11 +265,13 @@ export default {
           link:
             "https://www.infotech.com/research/ss/improve-employee-engagement-to-drive-it-performance",
           value: 5,
-          logo: asanaLogo
+          logo: asanaLogo,
+          color: 'asana-color'
         },
         {
           code: "customerX",
-          name: "Customer Experience",
+          name: "Customer",
+          name2: 'Experience',
           blurb:
             "In 1975 a man pulled up to a store with four snow tires in the bed of his truck. He had bought the tires at this location several weeks ago and needed to return them. Unbeknownst to him, the tire shop had closed, and Nordstrom had moved in. Long story short, after explaining his situation to a sales clerk, Nordstrom allowed him to return the tires and refunded his money.",
           company_name: "Nordstrom",
@@ -270,11 +279,13 @@ export default {
           link:
             "https://www.infotech.com/research/ss/build-a-strong-technology-foundation-for-customer-experience-management",
           value: 5,
-          logo: nordstromLogo
+          logo: nordstromLogo,
+          color: 'nordstrom-color'
         },
         {
           code: "apo03",
-          name: "Enterprise Architecture",
+          name: "Enterprise",
+          name2: 'Architecture',
           blurb:
             "It’s been exactly five years to the day since Facebook announced one of the best business acquisitions in the history of Silicon Valley: The $1 billion purchase of a photo-sharing app called Instagram. At the time of the acquisition, Instagram had just 30 million users and zero revenue.  Now, Instagram has more than 600 million users, and many analysts believe it will soon be a multi-billion dollar ad business — if it’s not already.",
           company_name: "Facebook",
@@ -282,47 +293,56 @@ export default {
           link:
             "https://www.infotech.com/research/ss/assess-your-enterprise-architecture-maturity",
           value: 5,
-          logo: facebookLogo
+          logo: facebookLogo,
+          color: 'facebook-color'
         },
         {
           code: 'apo04',
           name: 'Innovation',
+          name2: '',
           blurb: "11 years ago today, Steve Jobs introduced the iPhone.  Eleven years ago today Steve Jobs announced a wide-screen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet device. But it wasn't three products. It was one product. And we got it, Steve. We got iPhone.",
           company_name: 'Apple',
           date: '2007',
           link: 'https://www.infotech.com/research/ss/prototype-with-an-innovation-design-sprint',
           value: 5,
-          logo: appleLogo
+          logo: appleLogo,
+          color: 'apple-color'
         },
         {
           code: 'itrg01',
-          name: 'IT Organizational Design',
+          name: 'IT Organizational',
+          name2: 'Design',
           blurb: "Well, the first big thing Bezos realized is that the infrastructure they'd built for selling and shipping books and sundry could be transformed an excellent repurposable computing platform.",
           company_name: 'Amazon',
           date: '2007',
           link: 'https://www.infotech.com/research/ss/redesign-your-it-organizational-structure',
           value: 5,
-          logo: amazonLogo
+          logo: amazonLogo,
+          color: 'amazon-color'
         },
         {
           code: 'edm03',
-          name: 'Risk Management',
+          name: 'Risk',
+          name2: 'Management',
           blurb: "The IBM Personal Computer, commonly known as the IBM PC, is the original version and progenitor of the IBM PC compatible hardware platform. It is IBM model number 5150, and was introduced on August 12, 1981. It was created by a team of engineers and designers under the direction of Don Estridge of the IBM Entry Systems Division in Boca Raton, Florida.",
           company_name: 'IBM',
           date: '2007',
           link: 'https://www.infotech.com/research/ss/build-a-business-driven-it-risk-management-program',
           value: 5,
-          logo: ibmLogo
+          logo: ibmLogo,
+          color: 'ibm-color'
         },
         {
           code: 'dss05',
-          name: 'Security Management',
+          name: 'Security',
+          name2: 'Management',
           blurb: "On Monday, March 18, 2013 Spamhaus contacted CloudFlare regarding an attack they were seeing against their website spamhaus.org. They signed up for CloudFlare and we quickly mitigated the attack. The attack, initially, was approximately 10Gbps generated largely from open DNS recursors. On March 19, the attack increased in size, peaking at approximately 90Gbps. The attack fluctuated between 90Gbps and 30Gbps until 01:15 UTC on on March 21.",
           company_name: 'CloudFlare',
           date: '2013',
           link: 'https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan',
           value: 5,
-          logo: cloudflareLogo
+          logo: cloudflareLogo,
+          color: 'cloudflare-color'
         }
       ],
       calced: false,
@@ -455,15 +475,51 @@ body {
 .title-container {
   margin-top: 10px;
   .title-header {
-    font-family: Montserrat-Black;
+    font-family: Montserrat;
     font-size: 100px;
     color: #373636;
-    line-height: 46px;
+    line-height: 86px;
     margin: 10px 0 0;
   }
 
   .amazon-color {
     color: #F6A61F;
+    line-height: 92px;
+  }
+  .apple-color {
+    color: #373636;
+    line-height: 92px;
+  }
+  .asana-color {
+    color: #ff4422;
+    line-height: 92px;
+  }
+  .cloudflare-color {
+    color: #223388;
+    line-height: 92px;
+  }
+  .facebook-color {
+    color: #0000ff;
+    line-height: 92px;
+  }
+  .ibm-color {
+    color: #00ffff;
+    line-height: 92px;
+  }
+  .miller-color {
+    color: #00cc88;
+    line-height: 92px;
+  }
+  .netflix-color {
+    color: #D81F26;
+    line-height: 92px;
+  }
+  .nordstrom-color {
+    color: #cc5588;
+    line-height: 92px;
+  }
+  .walmart-color {
+    color: #55ff55;
     line-height: 92px;
   }
 }
