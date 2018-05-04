@@ -1,6 +1,6 @@
 <template>
   <div>
-    yay for titles!
+    <h2>- Info-Tech Research Group</h2>
   </div>
 </template>
 

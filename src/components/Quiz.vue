@@ -1,5 +1,6 @@
 <template>
   <div id="container">
+    <button @click='resetPage'>Reset</button>
   <quiz-title  v-if='titleScreen'/>
   <button @click='startQuiz' v-if='titleScreen'>Get Started</button>
   <div v-if='!titleScreen'>
@@ -30,14 +31,23 @@
 </template>
 
 <script>
+// eslint-disable-next-line
 import amazonLogo from "../assets/amazon.svg";
+// eslint-disable-next-line
 import appleLogo from "../assets/apple.svg";
+// eslint-disable-next-line
 import asanaLogo from "../assets/asana.svg";
+// eslint-disable-next-line
 import cloudflareLogo from "../assets/cloudflare.svg";
+// eslint-disable-next-line
 import facebookLogo from "../assets/facebook.svg";
+// eslint-disable-next-line
 import millerLogo from "../assets/miller.svg";
+// eslint-disable-next-line
 import netflixLogo from "../assets/netflix.svg";
+// eslint-disable-next-line
 import nordstromLogo from "../assets/nordstrom.svg";
+// eslint-disable-next-line
 import walmartLogo from "../assets/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
 export default {
@@ -256,6 +266,11 @@ export default {
     },
     startQuiz() {
       this.titleScreen = false;
+    },
+    resetPage() {
+      this.quizSection = 0
+      this.titleScreen = true
+      this.calced = false
     }
   },
   computed: {
