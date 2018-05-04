@@ -6,13 +6,15 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Sliders from './components/Sliders.vue'
+
 import router from './router'
 
 export default {
   name: 'app',
   router: router,
+  methods: {
+
+  }
 }
 </script>
 
