@@ -1,10 +1,8 @@
 <template>
   <div class="bg">
   <div id="container">
-    <button @click='resetPage'>Reset</button>
     <quiz-title  v-if='titleScreen'/>
-    <img src="../assets/netflix.svg" />
-    <button @click='startQuiz' v-if='titleScreen'>Get Started</button>
+    <start-button @click='startQuiz' v-if='titleScreen' > </start-button>
     <div v-if='!titleScreen'>
 
       <!-- The Quiz -->
@@ -48,6 +46,7 @@
 
       </div>
     </div>
+        <button @click='resetPage'>Reset</button>
   </div>
 </template>
 
@@ -73,9 +72,10 @@ import nordstromLogo from "../assets/nordstrom.svg";
 // eslint-disable-next-line
 import walmartLogo from "../assets/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
+import StartButton from './StartButton.vue'
 export default {
   name: "Quiz",
-  components: { QuizTitle },
+  components: { QuizTitle, StartButton },
   data() {
     return {
       questions: [
