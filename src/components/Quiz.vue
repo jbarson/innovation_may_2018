@@ -205,10 +205,11 @@ export default {
   },
   methods: {
     calculate () {
+      const questions = this.questions
       this.calced = true
       this.cobitItems.map(function(item){
-        var filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
-        var values = filteredQuestions.map(function(q){return Number(q.value)}) || [0];
+        const filteredQuestions = questions.filter(function(question){return question.cobitCode == item.code;})
+        const values = filteredQuestions.map(function(q){return Number(q.value)}) || [0];
         item.value = values.reduce(function(acc, val) { return acc + val; });
       });
       this.cobitItems.sort((a, b) => b.value-a.value);
