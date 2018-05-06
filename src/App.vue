@@ -1,21 +1,17 @@
 <template>
-  <!-- <div id="app">
-    <Sliders />
-  </div> -->
-  <router-view></router-view>
+  <div id="app">
+    <Quiz />
+  </div>
+
 </template>
 
 <script>
-
-import router from './router'
-
+import Quiz from "@/components/Quiz";
 export default {
-  name: 'app',
-  router: router,
-  methods: {
-
-  }
-}
+  name: "app",
+  components: { Quiz },
+  methods: {}
+};
 </script>
 
 <style>

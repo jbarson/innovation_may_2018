@@ -20,9 +20,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'StartButton'
-  }
+export default {
+  name: "StartButton"
+};
 </script>
 
 <style scoped>

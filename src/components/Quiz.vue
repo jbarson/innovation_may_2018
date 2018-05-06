@@ -90,7 +90,7 @@ import tylenolLogo from "../assets/companyLogos/tylenol.svg";
 // eslint-disable-next-line
 import walmartLogo from "../assets/companyLogos/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
-import StartButton from './StartButton.vue'
+import StartButton from "./StartButton.vue";
 export default {
   name: "Quiz",
   components: { QuizTitle, StartButton },
@@ -188,93 +188,106 @@ export default {
         },
         {
           id: 13,
-          text: 'IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.',
+          text:
+            "IT leadership needs to take accountability for the retention and productivity of their employees in order to drive business value.",
           value: 5,
-          cobitCode: 'itrg02'
+          cobitCode: "itrg02"
         },
         {
           id: 14,
-          text: 'Your organisation is satisfied with its IT services, and everyone looks to IT to solve business problems and drive the enterprise forward.',
+          text:
+            "Your organisation is satisfied with its IT services, and everyone looks to IT to solve business problems and drive the enterprise forward.",
           value: 5,
-          cobitCode: 'apo04'
+          cobitCode: "apo04"
         },
         {
           id: 15,
-          text: 'Innovative ideas from your IT department are often communicated/evangelised across the company and then actioned.',
+          text:
+            "Innovative ideas from your IT department are often communicated/evangelised across the company and then actioned.",
           value: 5,
-          cobitCode: 'apo04'
+          cobitCode: "apo04"
         },
         {
           id: 16,
-          text: 'Our organisation has recently undergone a successful organizational redesign. One that incorporated my IT Department.',
+          text:
+            "Our organisation has recently undergone a successful organizational redesign. One that incorporated my IT Department.",
           value: 5,
-          cobitCode: 'itrg01'
+          cobitCode: "itrg01"
         },
         {
           id: 17,
-          text: 'My organisation has managed to stay at the forefront of our industry despite external competitive influences and changing technological trends.',
+          text:
+            "My organisation has managed to stay at the forefront of our industry despite external competitive influences and changing technological trends.",
           value: 5,
-          cobitCode: 'itrg01'
+          cobitCode: "itrg01"
         },
         {
           id: 18,
-          text: 'My organisation tackles risk head-on.',
+          text: "My organisation tackles risk head-on.",
           value: 5,
-          cobitCode: 'edm03'
+          cobitCode: "edm03"
         },
         {
           id: 19,
-          text: 'We have a structured, robust system to help us identify risks.',
+          text:
+            "We have a structured, robust system to help us identify risks.",
           value: 5,
-          cobitCode: 'edm03'
+          cobitCode: "edm03"
         },
         {
           id: 20,
-          text: 'IT and your business are aligned.',
+          text: "IT and your business are aligned.",
           value: 5,
-          cobitCode: 'edm02'
+          cobitCode: "edm02"
         },
         {
           id: 21,
-          text: 'We make decisions based on the shared company perspective of value.',
+          text:
+            "We make decisions based on the shared company perspective of value.",
           value: 5,
-          cobitCode: 'edm02'
+          cobitCode: "edm02"
         },
         {
           id: 22,
-          text: 'Traditional Disaster Recovery Plan (DRP) templates are onerous and result in a lengthy, dense plan that might satisfy auditors but is not effective in a crisis.',
+          text:
+            "Traditional Disaster Recovery Plan (DRP) templates are onerous and result in a lengthy, dense plan that might satisfy auditors but is not effective in a crisis.",
           value: 5,
-          cobitCode: 'dss04'
+          cobitCode: "dss04"
         },
         {
           id: 23,
-          text: 'The increased use of cloud vendors and co-lo/MSPs means you may be dependent on vendors to meet your recovery timeline objectives.',
+          text:
+            "The increased use of cloud vendors and co-lo/MSPs means you may be dependent on vendors to meet your recovery timeline objectives.",
           value: 5,
-          cobitCode: 'dss04'
+          cobitCode: "dss04"
         },
         {
           id: 24,
-          text: 'In your organisation, when a worker retires, their knowledge captured by a mature IT system.',
+          text:
+            "In your organisation, when a worker retires, their knowledge captured by a mature IT system.",
           value: 5,
-          cobitCode: 'bai08'
+          cobitCode: "bai08"
         },
         {
           id: 25,
-          text: 'Institutional knowledge is consistently recorded and managed by your IT Department.',
+          text:
+            "Institutional knowledge is consistently recorded and managed by your IT Department.",
           value: 5,
-          cobitCode: 'bai08'
+          cobitCode: "bai08"
         },
         {
           id: 26,
-          text: 'Your orgnanisation fights fires as they appear, while always engaging in systematic prevention.',
+          text:
+            "Your orgnanisation fights fires as they appear, while always engaging in systematic prevention.",
           value: 5,
-          cobitCode: 'dss03'
+          cobitCode: "dss03"
         },
         {
           id: 27,
-          text: 'Your company sees the IT department as an invaluable partner when problem solving.',
+          text:
+            "Your company sees the IT department as an invaluable partner when problem solving.",
           value: 5,
-          cobitCode: 'dss03'
+          cobitCode: "dss03"
         }
       ],
       cobitItems: [
@@ -290,12 +303,12 @@ export default {
             "https://www.infotech.com/research/ss/build-a-next-generation-bi-with-a-game-changing-bi-strategy",
           value: 5,
           logo: millerLogo,
-          color: 'miller-color'
+          color: "miller-color"
         },
         {
           code: "edm04",
           name: "Cost",
-          name2: 'Optimization',
+          name2: "Optimization",
           blurb:
             "So much for the idea that Walmart (NYSE: WMT) is a boring stock. Shares gained over 40% in 2017 as the retailer added $80 billion to its market capitalization and trounced the broader market. That rally looks even more impressive when judged against industry peers. Target shed 9% in 2017; Kroger shareholders endured a 20% slump; and Walmart roughly doubled Costco's return for the year.",
           company_name: "Walmart",
@@ -304,12 +317,12 @@ export default {
             "https://www.infotech.com/research/ss/minimize-the-damage-of-it-cost-cuts",
           value: 5,
           logo: walmartLogo,
-          color: 'walmart-color'
+          color: "walmart-color"
         },
         {
           code: "bai06",
           name: "Change",
-          name2: 'Management',
+          name2: "Management",
           blurb:
             "Netflix's initial business model included DVD sales and rental, although Hastings jettisoned DVD sales about a year after Netflix's founding to focus on the DVD rental by mail business.[9][10] In 2007, Netflix expanded its business with the introduction of streaming media, while retaining the DVD and Blu-ray rental service.",
           company_name: "Netflix",
@@ -318,12 +331,12 @@ export default {
             "https://www.infotech.com/research/ss/optimize-change-management",
           value: 5,
           logo: netflixLogo,
-          color: 'netflix-color'
+          color: "netflix-color"
         },
         {
           code: "itrg02",
           name: "Corporate",
-          name2: 'Culture',
+          name2: "Culture",
           blurb:
             "The company is built on the idea that mindfulness, clear communication, and compassion are all critical to long-term success. Asana has become known for its radically inclusive, positive work environment.  This approach has paid off. Asana received a rare perfect rating on Glassdoor and a spot on Glassdoor’s Top 10 Best Places to Work in 2017. The company was also named one of Entrepreneur magazine’s best workplace cultures of 2017.",
           company_name: "Asana",
@@ -332,12 +345,12 @@ export default {
             "https://www.infotech.com/research/ss/improve-employee-engagement-to-drive-it-performance",
           value: 5,
           logo: asanaLogo,
-          color: 'asana-color'
+          color: "asana-color"
         },
         {
           code: "customerX",
           name: "Customer",
-          name2: 'Experience',
+          name2: "Experience",
           blurb:
             "In 1975 a man pulled up to a store with four snow tires in the bed of his truck. He had bought the tires at this location several weeks ago and needed to return them. Unbeknownst to him, the tire shop had closed, and Nordstrom had moved in. Long story short, after explaining his situation to a sales clerk, Nordstrom allowed him to return the tires and refunded his money.",
           company_name: "Nordstrom",
@@ -346,12 +359,12 @@ export default {
             "https://www.infotech.com/research/ss/build-a-strong-technology-foundation-for-customer-experience-management",
           value: 5,
           logo: nordstromLogo,
-          color: 'nordstrom-color'
+          color: "nordstrom-color"
         },
         {
           code: "apo03",
           name: "Enterprise",
-          name2: 'Architecture',
+          name2: "Architecture",
           blurb:
             "It’s been exactly five years to the day since Facebook announced one of the best business acquisitions in the history of Silicon Valley: The $1 billion purchase of a photo-sharing app called Instagram. At the time of the acquisition, Instagram had just 30 million users and zero revenue.  Now, Instagram has more than 600 million users, and many analysts believe it will soon be a multi-billion dollar ad business — if it’s not already.",
           company_name: "Facebook",
@@ -360,103 +373,119 @@ export default {
             "https://www.infotech.com/research/ss/assess-your-enterprise-architecture-maturity",
           value: 5,
           logo: facebookLogo,
-          color: 'facebook-color'
+          color: "facebook-color"
         },
         {
-          code: 'apo04',
-          name: 'Innovation',
-          name2: '',
-          blurb: "11 years ago today, Steve Jobs introduced the iPhone.  Eleven years ago today Steve Jobs announced a wide-screen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet device. But it wasn't three products. It was one product. And we got it, Steve. We got iPhone.",
-          company_name: 'Apple',
-          date: '2007',
-          link: 'https://www.infotech.com/research/ss/prototype-with-an-innovation-design-sprint',
+          code: "apo04",
+          name: "Innovation",
+          name2: "",
+          blurb:
+            "11 years ago today, Steve Jobs introduced the iPhone.  Eleven years ago today Steve Jobs announced a wide-screen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet device. But it wasn't three products. It was one product. And we got it, Steve. We got iPhone.",
+          company_name: "Apple",
+          date: "2007",
+          link:
+            "https://www.infotech.com/research/ss/prototype-with-an-innovation-design-sprint",
           value: 5,
           logo: appleLogo,
-          color: 'apple-color'
+          color: "apple-color"
         },
         {
-          code: 'itrg01',
-          name: 'IT Organizational',
-          name2: 'Design',
-          blurb: "Well, the first big thing Bezos realized is that the infrastructure they'd built for selling and shipping books and sundry could be transformed an excellent repurposable computing platform.",
-          company_name: 'Amazon',
-          date: '2007',
-          link: 'https://www.infotech.com/research/ss/redesign-your-it-organizational-structure',
+          code: "itrg01",
+          name: "IT Organizational",
+          name2: "Design",
+          blurb:
+            "Well, the first big thing Bezos realized is that the infrastructure they'd built for selling and shipping books and sundry could be transformed an excellent repurposable computing platform.",
+          company_name: "Amazon",
+          date: "2007",
+          link:
+            "https://www.infotech.com/research/ss/redesign-your-it-organizational-structure",
           value: 5,
           logo: amazonLogo,
-          color: 'amazon-color'
+          color: "amazon-color"
         },
         {
-          code: 'edm03',
-          name: 'Risk',
-          name2: 'Management',
-          blurb: "The IBM Personal Computer, commonly known as the IBM PC, is the original version and progenitor of the IBM PC compatible hardware platform. It is IBM model number 5150, and was introduced on August 12, 1981. It was created by a team of engineers and designers under the direction of Don Estridge of the IBM Entry Systems Division in Boca Raton, Florida.",
-          company_name: 'IBM',
-          date: '2007',
-          link: 'https://www.infotech.com/research/ss/build-a-business-driven-it-risk-management-program',
+          code: "edm03",
+          name: "Risk",
+          name2: "Management",
+          blurb:
+            "The IBM Personal Computer, commonly known as the IBM PC, is the original version and progenitor of the IBM PC compatible hardware platform. It is IBM model number 5150, and was introduced on August 12, 1981. It was created by a team of engineers and designers under the direction of Don Estridge of the IBM Entry Systems Division in Boca Raton, Florida.",
+          company_name: "IBM",
+          date: "2007",
+          link:
+            "https://www.infotech.com/research/ss/build-a-business-driven-it-risk-management-program",
           value: 5,
           logo: ibmLogo,
-          color: 'ibm-color'
+          color: "ibm-color"
         },
         {
-          code: 'dss05',
-          name: 'Security',
-          name2: 'Management',
-          blurb: "On Monday, March 18, 2013 Spamhaus contacted CloudFlare regarding an attack they were seeing against their website spamhaus.org. They signed up for CloudFlare and we quickly mitigated the attack. The attack, initially, was approximately 10Gbps generated largely from open DNS recursors. On March 19, the attack increased in size, peaking at approximately 90Gbps. The attack fluctuated between 90Gbps and 30Gbps until 01:15 UTC on on March 21.",
-          company_name: 'CloudFlare',
-          date: '2013',
-          link: 'https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan',
+          code: "dss05",
+          name: "Security",
+          name2: "Management",
+          blurb:
+            "On Monday, March 18, 2013 Spamhaus contacted CloudFlare regarding an attack they were seeing against their website spamhaus.org. They signed up for CloudFlare and we quickly mitigated the attack. The attack, initially, was approximately 10Gbps generated largely from open DNS recursors. On March 19, the attack increased in size, peaking at approximately 90Gbps. The attack fluctuated between 90Gbps and 30Gbps until 01:15 UTC on on March 21.",
+          company_name: "CloudFlare",
+          date: "2013",
+          link:
+            "https://www.infotech.com/research/ss/build-a-security-governance-and-management-plan",
           value: 5,
           logo: cloudflareLogo,
-          color: 'cloudflare-color'
+          color: "cloudflare-color"
         },
         {
-          code: 'edm02',
-          name: 'Business',
-          name2: 'Value',
-          blurb: "In October 2014, Salesforce announced the development of its Customer Success Platform to tie together Salesforce's services, including sales, service, marketing, analytics, community, and mobile apps.[9]In October 2017, Salesforce would be launching Facebook Analytics tool for B2B marketers",
-          company_name: 'Salesforce',
-          date: '2014',
-          link: 'https://www.infotech.com/research/ss/maximize-business-value-from-it-through-benefits-realization',
+          code: "edm02",
+          name: "Business",
+          name2: "Value",
+          blurb:
+            "In October 2014, Salesforce announced the development of its Customer Success Platform to tie together Salesforce's services, including sales, service, marketing, analytics, community, and mobile apps.[9]In October 2017, Salesforce would be launching Facebook Analytics tool for B2B marketers",
+          company_name: "Salesforce",
+          date: "2014",
+          link:
+            "https://www.infotech.com/research/ss/maximize-business-value-from-it-through-benefits-realization",
           value: 5,
           logo: salesforceLogo,
-          color: 'salesforce-color'
+          color: "salesforce-color"
         },
         {
-          code: 'dss04',
-          name: 'Disaster',
-          name2: 'Recovery',
-          blurb: "The murders started in September 1982, when the parents of Mary Kellerman gave the 12-year-old a painkiller when she woke up complaining of a cold. She died hours later. Postal worker Adam Janus died in another Chicago suburb later that morning. Janus' brother and his brother's wife, complaining of headaches while mourning Adam, died too. In a few days the death toll grew — the only link being that each victim had taken Extra-Strength Tylenol.",
-          company_name: 'Tylenol',
-          date: '1982',
-          link: 'https://www.infotech.com/research/ss/create-a-right-sized-disaster-recovery-plan',
+          code: "dss04",
+          name: "Disaster",
+          name2: "Recovery",
+          blurb:
+            "The murders started in September 1982, when the parents of Mary Kellerman gave the 12-year-old a painkiller when she woke up complaining of a cold. She died hours later. Postal worker Adam Janus died in another Chicago suburb later that morning. Janus' brother and his brother's wife, complaining of headaches while mourning Adam, died too. In a few days the death toll grew — the only link being that each victim had taken Extra-Strength Tylenol.",
+          company_name: "Tylenol",
+          date: "1982",
+          link:
+            "https://www.infotech.com/research/ss/create-a-right-sized-disaster-recovery-plan",
           value: 5,
           logo: tylenolLogo,
-          color: 'tylenol-color'
+          color: "tylenol-color"
         },
         {
-          code: 'bai08',
-          name: 'Knowledge',
-          name2: 'Management',
-          blurb: "This New York-based credit card company, which is also one of the world's largest travel agencies, is planning for the future and keeping its talent close at hand. With more and more IT employees nearing retirement age, the company launched the American Express Technologies Retiree Network in 2008",
-          company_name: 'AMEX',
-          date: '2008',
-          link: 'https://www.infotech.com/research/ss/transfer-it-knowledge-before-it-s-gone',
+          code: "bai08",
+          name: "Knowledge",
+          name2: "Management",
+          blurb:
+            "This New York-based credit card company, which is also one of the world's largest travel agencies, is planning for the future and keeping its talent close at hand. With more and more IT employees nearing retirement age, the company launched the American Express Technologies Retiree Network in 2008",
+          company_name: "AMEX",
+          date: "2008",
+          link:
+            "https://www.infotech.com/research/ss/transfer-it-knowledge-before-it-s-gone",
           value: 5,
           logo: amexLogo,
-          color: 'amex-color'
+          color: "amex-color"
         },
         {
-          code: 'dss03',
-          name: 'Incident and Problem',
-          name2: 'Management',
-          blurb: "In the late 1990s, Swedish-owned Ericsson was one of the big international players in the mobile phone industry, together with the Finnish company Nokia. My first mobile phone in 1996 was in fact a Nokia, but I switched to Ericsson in 1999, because they made much better phones, so I thought. While the phones may have been better, [problem] management for sure wasn’t.",
-          company_name: 'Nokia',
-          date: '2000',
-          link: 'https://www.infotech.com/research/ss/incident-and-problem-management',
+          code: "dss03",
+          name: "Incident and Problem",
+          name2: "Management",
+          blurb:
+            "In the late 1990s, Swedish-owned Ericsson was one of the big international players in the mobile phone industry, together with the Finnish company Nokia. My first mobile phone in 1996 was in fact a Nokia, but I switched to Ericsson in 1999, because they made much better phones, so I thought. While the phones may have been better, [problem] management for sure wasn’t.",
+          company_name: "Nokia",
+          date: "2000",
+          link:
+            "https://www.infotech.com/research/ss/incident-and-problem-management",
           value: 5,
           logo: nokiaLogo,
-          color: 'nokia-color'
+          color: "nokia-color"
         }
       ],
       calced: false,
@@ -488,9 +517,9 @@ export default {
       this.titleScreen = false;
     },
     resetPage() {
-      this.quizSection = 0
-      this.titleScreen = true
-      this.calced = false
+      this.quizSection = 0;
+      this.titleScreen = true;
+      this.calced = false;
     }
   },
   computed: {
@@ -498,12 +527,12 @@ export default {
       return this.calced ? this.cobitItems[0] : null;
     },
     backgroundClass: function() {
-      return this.calced ? this.strongestItem.company_name.toLowerCase() : '';
+      return this.calced ? this.strongestItem.company_name.toLowerCase() : "";
     },
     sectionedQuestions: function() {
       let section = this.quizSection;
-      if(section<=2) {
-        return this.questions.slice((section * 9), 9 + (section * 9) )
+      if (section <= 2) {
+        return this.questions.slice(section * 9, 9 + section * 9);
       }
     }
   },
@@ -516,9 +545,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
-
 body {
-	font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .get-started {
@@ -527,7 +555,8 @@ body {
 
 // Quiz Questions
 .bg {
-  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNjQ0cHgiIGhlaWdodD0iNzY4cHgiIHZpZXdCb3g9IjAgMCA2NDQgNzY4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0OS4zICg1MTE2NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+YmcgY29weSA1PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IHgxPSI2MC44NjU0MDQlIiB5MT0iLTM3LjUyNTg3ODklIiB4Mj0iNjAuODY1NDAyMyUiIHkyPSI5OC41NjEyNTc2JSIgaWQ9ImxpbmVhckdyYWRpZW50LTEiPgogICAgICAgICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjRjlGOUY5IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNBRkFGQUYiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIwLjExOTk5OTk5NyI+CiAgICAgICAgPGcgaWQ9IkFydGJvYXJkLUNvcHktNSIgZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudC0xKSI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJiZy1jb3B5LTUiIHBvaW50cz0iLTE1MC40MTQwNjIgMCA2NDMuMjAzMTI1IDAgNTEgNzY4IC0xNTQuNzI2NTYyIDc2OCI+PC9wb2x5Z29uPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+") no-repeat;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNjQ0cHgiIGhlaWdodD0iNzY4cHgiIHZpZXdCb3g9IjAgMCA2NDQgNzY4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0OS4zICg1MTE2NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+YmcgY29weSA1PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IHgxPSI2MC44NjU0MDQlIiB5MT0iLTM3LjUyNTg3ODklIiB4Mj0iNjAuODY1NDAyMyUiIHkyPSI5OC41NjEyNTc2JSIgaWQ9ImxpbmVhckdyYWRpZW50LTEiPgogICAgICAgICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjRjlGOUY5IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNBRkFGQUYiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIwLjExOTk5OTk5NyI+CiAgICAgICAgPGcgaWQ9IkFydGJvYXJkLUNvcHktNSIgZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudC0xKSI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJiZy1jb3B5LTUiIHBvaW50cz0iLTE1MC40MTQwNjIgMCA2NDMuMjAzMTI1IDAgNTEgNzY4IC0xNTQuNzI2NTYyIDc2OCI+PC9wb2x5Z29uPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+")
+    no-repeat;
 }
 .quiz-copy-container {
   padding-left: 25px;
@@ -540,17 +569,18 @@ body {
   }
 }
 .coloredSlider {
-	float: left;
-	clear: both;
+  float: left;
+  clear: both;
   width: 600px;
-	margin: 15px;
+  margin: 15px;
 }
 .coloredSlider .ui-slider-range {
-	background: #ff0000;
+  background: #ff0000;
 }
-.coloredSlider .ui-state-default, .ui-widget-content .ui-state-default {
-	background: none;
-	background-color: #FFF;
+.coloredSlider .ui-state-default,
+.ui-widget-content .ui-state-default {
+  background: none;
+  background-color: #fff;
 }
 
 // Quiz Results
@@ -608,7 +638,6 @@ body {
   padding-bottom: 21px;
 }
 .company-logo {
-  display: inline-block;
   float: left;
   margin-left: 20px;
   position: relative;
@@ -625,11 +654,11 @@ body {
   }
 
   .amazon-color {
-    color: #F6A61F;
+    color: #f6a61f;
     line-height: 92px;
   }
   .amex-color {
-    color: #F6A61F;
+    color: #f6a61f;
     line-height: 92px;
   }
   .apple-color {
@@ -657,18 +686,18 @@ body {
     line-height: 92px;
   }
   .netflix-color {
-    color: #D81F26;
+    color: #d81f26;
     line-height: 92px;
   }
   .nokia-color {
-    color: #D81F26;
+    color: #d81f26;
     line-height: 92px;
   }
   .nordstrom-color {
     color: #cc5588;
     line-height: 92px;
   }
-  .salesforce-color{
+  .salesforce-color {
     color: #00ffff;
     line-height: 92px;
   }
@@ -693,48 +722,48 @@ body {
 
 // Company specific
 .amazon {
-  background: url('../assets/companyBgs/amazon.jpg');
+  background: url("../assets/companyBgs/amazon.jpg");
 }
 .apple {
-  background: url('../assets/companyBgs/apple.jpg');
+  background: url("../assets/companyBgs/apple.jpg");
 }
 .amex {
-  background: url('../assets/companyBgs/apple.jpg');
+  background: url("../assets/companyBgs/apple.jpg");
 }
 .asana {
-  background: url('../assets/companyBgs/apple.jpg');
+  background: url("../assets/companyBgs/apple.jpg");
 }
 .cloudflare {
-  background: url('../assets/companyBgs/apple.jpg');
+  background: url("../assets/companyBgs/apple.jpg");
 }
 .facebook {
-  background: url('../assets/companyBgs/apple.jpg');
+  background: url("../assets/companyBgs/apple.jpg");
   object-fit: cover;
 }
 .ibm {
-  background: url('../assets/companyBgs/amazon.jpg');
+  background: url("../assets/companyBgs/amazon.jpg");
 }
 .miller {
-  background: url('../assets/companyBgs/amazon.jpg');
+  background: url("../assets/companyBgs/amazon.jpg");
 }
 .netflix {
-  background: url('../assets/companyBgs/netflix.jpg');
+  background: url("../assets/companyBgs/netflix.jpg");
 }
 .nokia {
-  background: url('../assets/companyBgs/apple.jpg');
+  background: url("../assets/companyBgs/apple.jpg");
 }
 .nordstrom {
-  background: url('../assets/companyBgs/netflix.jpg');
+  background: url("../assets/companyBgs/netflix.jpg");
 }
 .salesforce {
-  background: url('../assets/companyBgs/netflix.jpg');
+  background: url("../assets/companyBgs/netflix.jpg");
 }
 .walmart {
-  background: url('../assets/companyBgs/netflix.jpg');
+  background: url("../assets/companyBgs/netflix.jpg");
 }
 
 #container {
   min-height: 100;
-  background-size:cover;
+  background-size: cover;
 }
 </style>
