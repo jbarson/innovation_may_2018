@@ -1,10 +1,7 @@
 <template>
   <div>
   <div id="container" v-bind:class="backgroundClass">
-    <quiz-title  v-if='titleScreen'/>
-    <div @click='startQuiz' v-if='titleScreen'>
-      <start-button />
-    </div>
+    <quiz-title  v-if='titleScreen' @startQuiz="startQuiz"/>    
     <div v-if='!titleScreen'>
       <!-- The Quiz -->
       <div v-if="!calced" class="bg">
@@ -90,10 +87,10 @@ import tylenolLogo from "../assets/companyLogos/tylenol.svg";
 // eslint-disable-next-line
 import walmartLogo from "../assets/companyLogos/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
-import StartButton from "./StartButton.vue";
+
 export default {
   name: "Quiz",
-  components: { QuizTitle, StartButton },
+  components: { QuizTitle },
   data() {
     return {
       questions: [
