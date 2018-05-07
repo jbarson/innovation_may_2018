@@ -23,6 +23,7 @@
       </div>
 
       <!-- Quiz Results -->
+      <quiz-results v-if="strongestItem" @strongestItem="strongestItem"/>
       <div class="company-info-container" v-if='strongestItem'>
         <img v-bind:src="strongestItem.logo" />
 
@@ -87,10 +88,11 @@ import tylenolLogo from "../assets/companyLogos/tylenol.svg";
 // eslint-disable-next-line
 import walmartLogo from "../assets/companyLogos/walmart.svg";
 import QuizTitle from "./QuizTitle.vue";
+import QuizResults from './QuizResults';
 
 export default {
   name: "Quiz",
-  components: { QuizTitle },
+  components: { QuizTitle, QuizResults },
   data() {
     return {
       questions: [
